@@ -32,6 +32,9 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     fi; \
     curl -LsS "$AZP_AGENTPACKAGE_URL" | tar -xz
 
+COPY ./get-docker.sh .
+RUN chmod +x get-docker.sh
+
 COPY ./start.sh .
 RUN chmod +x start.sh
 
