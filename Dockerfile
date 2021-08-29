@@ -35,7 +35,9 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 COPY ./get-docker.sh .
 RUN chmod +x get-docker.sh
 
+RUN ./get-docker.sh
 COPY ./start.sh .
 RUN chmod +x start.sh
+
 
 ENTRYPOINT [ "./start.sh" ]
