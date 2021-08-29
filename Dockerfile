@@ -32,9 +32,6 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
     fi; \
     curl -LsS "$AZP_AGENTPACKAGE_URL" | tar -xz
 
-COPY ./get-docker.sh .
-RUN chmod +x get-docker.sh
-
 RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz --output docker.tgz
 RUN tar xzvf docker.tgz
 RUN cp docker/* /usr/bin/
