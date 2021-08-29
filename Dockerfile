@@ -35,7 +35,6 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz --output docker.tgz
 RUN tar xzvf docker.tgz
 RUN cp docker/* /usr/bin/
-
 COPY ./start.sh .
 RUN chmod +x start.sh
 
